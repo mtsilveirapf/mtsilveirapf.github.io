@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* Design tokens extraídos da auditoria do Framer (docs/framer-audit.md, seção 5). */
+@theme {
+  /* Breakpoints do projeto Framer (Desktop 1200-1919.98 / Tablet 810-1199.98 / Phone <810 / XXL >=1920) */
+  --breakpoint-tablet: 810px;
+  --breakpoint-desktop: 1200px;
+  --breakpoint-xxl: 1920px;
+
+  /* Breakpoint fora do sistema Framer, a pedido explícito do usuário: usado só para o padding
+     lateral de 160px (PAGE_PADDING_X em src/lib/layout.ts), que deve valer a partir de 1440px
+     em vez de esperar o xxl real (1920px). */
+  --breakpoint-wide: 1440px;
+
+  /* Cores — Color Style Tokens do Framer */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-border: #222222;
+  /* Clareado de #adadad a pedido explícito do usuário — mesmo depois da primeira clareada
+     (rgb(154,154,154) -> #adadad), o texto corrido (<p>, via @layer base abaixo) ainda estava
+     "muito escuro para ler". Contraste contra fundo preto puro: ~12:1 (AAA). */
+  --color-dark-gray: #c4c4c4;
+  --color-grey-d: rgb(31, 31, 31);
+  --color-smoke-gray: rgb(122, 122, 122);
+  --color-gray-50: rgb(130, 130, 130);
+  --color-secondary-text: rgb(204, 204, 204);
+  /* Alpha subido de 0.5 para 0.72 pelo mesmo motivo do --color-dark-gray acima — nome do token
+     ("50") não reflete mais o valor atual de propósito, mesma lógica já aceita em
+     --color-accent-purple (nome não descreve o tom atual). Mantido como white/alpha (não um hex
+     fixo) pra continuar se misturando naturalmente com os vários fundos escuros do site (preto
+     puro, rgb(10,10,10), rgb(13,13,13)), não só contra um fundo específico. Usado em <span> e
+     <p> por todo o site (StatCard, TableOfContents, StatBlock, badges, legendas...). */
+  --color-text-50: rgba(255, 255, 255, 0.72);
+  --color-text-25: rgba(255, 255, 255, 0.25);
+
+  /* Cor de destaque (lime) — hardcoded no Framer, sem token formal lá, formalizada aqui */
+  --color-accent: rgb(207, 230, 78);
+  /* Clareado de rgb(129, 74, 200) — o tom original tinha contraste ~3.5:1 sobre o fundo quase
+     preto das badges (StatusBadge "Soon"), abaixo do mínimo de 4.5:1 (AA) e bem atrás do laranja
+     irmão (~8.75:1). Este tom mede ~8:1, ficando equivalente ao laranja. */
+  --color-accent-purple: rgb(180, 150, 230);
+  /* Laranja para a badge de status "Em obra" (StatusBadge, pt-BR) — accent-purple já existia
+     sem uso no projeto, reaproveitado para a versão em inglês ("Soon"). */
+  --color-accent-orange: rgb(251, 146, 60);
+
+  /* Fontes do projeto */
+  --font-inter: var(--font-inter-var);
+  --font-inter-display: var(--font-inter-var);
+  --font-figtree: var(--font-figtree-var);
+  --font-mono: var(--font-jetbrains-mono-var);
+  --font-switzer: var(--font-inter-var);
+
+  /* Fonte secundária exclusiva da Home (Onest, escolhida pelo usuário para suavizar
+     credenciais/métricas/datas que hoje usam --font-mono) — não usar em gestao-prazos nem em
+     outras rotas. Gera a utility `font-secondary-home`. */
+  --font-secondary-home: var(--font-onest-var);
+
+  /* Larguras de container (docs/framer-audit.md, seção 5.4) */
+  --width-content: 1040px;
+  --width-container: 1269px;
+}
+
+body {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Cor padrão de texto corrido (<p>) em todo o site. Antes aplicada manualmente via
+   text-dark-gray em cada <p> do case study "Controle de Prazos" (gestao-prazos) — centralizada
+   aqui para virar default herdado por qualquer <p> do site, sem precisar declarar a classe em
+   cada página. @layer base é obrigatório aqui: sem ele essa regra fica "unlayered" e no CSS
+   moderno unlayered sempre vence QUALQUER regra em layer, inclusive as utilities do Tailwind
+   (.text-accent, .text-white etc.) mesmo com especificidade menor — descoberto ao testar: sem
+   @layer, esse seletor `p` sobrescrevia até text-accent/text-white explícitos. Dentro de
+   @layer base, o Tailwind (que gera utilities em @layer utilities, depois de base) volta a
+   vencer normalmente, como esperado. Contraste contra preto puro após a 2ª clareada: ~12:1
+   (AA exige 4.5:1, AAA exige 7:1). */
+@layer base {
+  p {
+    color: var(--color-dark-gray);
+  }
+}
+
+/* Vapor do GhostProjectCard (card "fantasma" no fim da grade de Projetos) — 3 linhas finas
+   subindo e desaparecendo em loop contínuo sobre o ícone de café. CSS puro (transform + opacity),
+   sem biblioteca. A regra de animação só existe dentro de @media (prefers-reduced-motion:
+   no-preference): quem pediu menos movimento simplesmente recebe as linhas paradas (ícone
+   "estático", como pedido), sem precisar de lógica JS extra pra desligar o loop. */
+@media (prefers-reduced-motion: no-preference) {
+  .steam-line {
+    animation: steam-rise 2s ease-in-out infinite;
+  }
+  .steam-line:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .steam-line:nth-child(3) {
+    animation-delay: 0.8s;
+  }
+}
+
+@keyframes steam-rise {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-10px) scaleY(1.15);
+    opacity: 0;
+  }
+}
