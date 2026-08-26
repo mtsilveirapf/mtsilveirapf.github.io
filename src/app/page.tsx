@@ -32,8 +32,12 @@ export default function Home() {
       {/* Hero — docs/framer-audit.md, seção 2.1 (height: 86vh / min-height: 85vh no Framer) */}
       <section className={`flex min-h-[85vh] flex-col ${PAGE_PADDING_X}`}>
         <div className="mx-auto flex h-full w-full max-w-[1269px] flex-1 flex-col justify-between gap-9 border-border pt-10 desktop:border-x">
+          {/* mx-0 self-start tablet:mx-6 tablet:self-center: só no mobile o chip de idioma
+              alinha à esquerda (mesmo inset do resto do conteúdo, sem margem própria somando
+              em cima do px-6 da section) em vez de centralizado — tablet/desktop mantêm
+              mx-6/self-center originais, inalterados. */}
           <div
-            className="mx-6 w-fit self-center desktop:mx-10"
+            className="mx-0 w-fit self-start tablet:mx-6 tablet:self-center desktop:mx-10"
             style={langTabStyle}
           >
             <LanguageTab className="border-x-0" />
