@@ -122,12 +122,15 @@ export function MobileAppPage({ locale }: { locale: Locale }) {
 
   return (
     <main className="flex flex-col">
-      <aside className="fixed top-[120px] left-10 z-40 hidden w-[220px] desktop:block">
+      {/* case-study-sidebar/case-study-container: correção de alinhamento na faixa
+          1366–1919.98px (ver globals.css) — fora dessa faixa, essas classes não têm nenhuma
+          regra aplicada, então left-10/w-[220px]/max-w-[1269px] mandam sozinhas como antes. */}
+      <aside className="case-study-sidebar fixed top-[120px] left-10 z-40 hidden w-[220px] desktop:block">
         <TableOfContents items={tocItems} />
       </aside>
 
       <div className={PAGE_PADDING_X}>
-        <div className="mx-auto flex w-full max-w-[1269px] flex-col items-center desktop:border-x desktop:border-border desktop:px-10">
+        <div className="case-study-container mx-auto flex w-full max-w-[1269px] flex-col items-center desktop:border-x desktop:border-border desktop:px-10">
           <div className="flex w-full max-w-[75ch] flex-col">
             {/* Hero — mesmo princípio do Chapter: um único Reveal para o bloco inteiro (link +
                 título + intro + StatCards), sem stagger entre eles. */}

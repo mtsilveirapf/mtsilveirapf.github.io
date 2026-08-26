@@ -111,3 +111,39 @@ body {
     opacity: 0;
   }
 }
+
+/* Correção de responsividade do índice lateral fixo (TableOfContents) nas páginas de case study
+   (gestao-prazos, app-mobile) — faixa 1366px–1919.98px, a pedido explícito do usuário.
+   .case-study-sidebar/.case-study-container em CaseStudyPage.tsx e MobileAppPage.tsx.
+
+   BUG: o índice é `position: fixed; left: 40px` (distância fixa da borda da VIEWPORT), enquanto
+   o container do conteúdo é `max-w-[1269px]` centralizado via mx-auto dentro de um padding
+   lateral responsivo (PAGE_PADDING_X) — a borda esquerda do container (o "stroke") não fica a
+   uma distância fixa da viewport, ela se move conforme a largura da tela. As duas coisas só
+   coincidem por acidente numa janela específica (>=1920px, onde a margem natural sobrando à
+   esquerda do container já é maior que os 220px do índice inteiro). Abaixo de 1920px essa
+   margem natural encolhe rápido — chega a só 80px em 1366px — e o índice de 220px passa a
+   SOBREPOR o container (medido: até 180px de sobreposição em 1366px).
+
+   FIX: só dá pra caber um índice legível nesses 80px de margem reduzindo também o max-width do
+   container (abrindo mais espaço nas laterais) — não existe combinação de largura/gap do índice
+   sozinho que resolva, o espaço realmente não existe sem isso. index/container/gap interpolam
+   linearmente em função de 100vw entre os dois extremos da faixa (1366px e 1920px); por serem
+   todos função da MESMA variável (vw), nunca perdem o alinhamento em nenhum ponto intermediário,
+   não só nos extremos — verificado por medição em 1366/1440/1600/1750/1919px. Em 1920px as três
+   fórmulas convergem exatamente para os valores originais do Tailwind (max-w-[1269px], w-[220px],
+   left-10) — a transição pro breakpoint xxl (que assume sozinho a partir daí, sem media query)
+   fica contínua, sem salto. Abaixo de 1366px e acima de 1919.98px, esta media query não se aplica
+   e as classes Tailwind originais mandam sozinhas, inalteradas.
+
+   Unlayered de propósito (não dentro de @layer): só assim vence as utilities do Tailwind dentro
+   da faixa — mesmo motivo já documentado no comentário do `p { color }` acima. */
+@media (min-width: 1366px) and (max-width: 1919.98px) {
+  .case-study-container {
+    max-width: calc(966px + 0.5469 * (100vw - 1366px));
+  }
+  .case-study-sidebar {
+    width: calc(160px + 0.10829 * (100vw - 1366px));
+    left: calc(8px + 0.0578 * (100vw - 1366px));
+  }
+}

@@ -8,3 +8,12 @@ export const PAGE_PADDING_X = "px-6 tablet:px-10 desktop:px-20 wide:px-40";
 // corrido, aprovado explicitamente pelo usuário na reconstrução da página do zero. Imagens e
 // ilustrações não usam essa largura — só parágrafos/citações/listas.
 export const PROSE_WIDTH = "max-w-[75ch]";
+
+// Rotas com o índice lateral fixo (sidebar) e a correção de largura de container associada
+// (.case-study-container em globals.css, faixa 1366–1919.98px). Usado por Header/Footer para
+// aplicar a mesma classe e manter os strokes verticais alinhados com o conteúdo nessas rotas
+// específicas — nas demais (Home, data-driven), o container permanece com max-w-[1269px] puro.
+export function isCaseStudyRoute(pathname: string | null): boolean {
+  if (!pathname) return false;
+  return pathname.startsWith("/gestao-prazos") || pathname.startsWith("/app-mobile");
+}
