@@ -21,15 +21,18 @@ const STATUS_CONTENT: Record<BadgeStatus, Record<Locale, { label: string; colorC
 // Badge de status reutilizável para cards de projeto ainda não construídos — remover a linha
 // <StatusBadge status="in-progress" /> do card é a única mudança necessária assim que o projeto
 // for publicado, sem mexer em nenhum outro componente. Texto e cor trocam sozinhos com o idioma
-// ativo (useLanguage), mesma lógica de i18n já usada no resto do site. Posição (canto superior
-// direito, absoluta) fica a cargo de quem usa o componente — cada card já tem seu próprio
-// `position: relative`.
+// ativo (useLanguage), mesma lógica de i18n já usada no resto do site. Posição no tablet/desktop
+// (canto superior direito, absoluta) fica a cargo de quem usa o componente — cada card já tem
+// seu próprio `position: relative`. No mobile, a pedido explícito do usuário, o badge sai do
+// posicionamento absoluto e vira o primeiro elemento do fluxo normal do card (acima do título) —
+// já é o primeiro filho no JSX de quem usa o componente, então só remover o `absolute` já
+// basta pra ele aparecer em cima, sem precisar reordenar nada.
 export function StatusBadge({ status }: { status: BadgeStatus }) {
   const { locale } = useLanguage();
   const { label, colorClass } = STATUS_CONTENT[status][locale];
   return (
     <span
-      className={`absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm leading-[1.2] ${colorClass}`}
+      className={`static w-fit inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm leading-[1.2] tablet:absolute tablet:top-4 tablet:right-4 tablet:z-10 ${colorClass}`}
     >
       <Hammer className="h-3.5 w-3.5" strokeWidth={1.5} />
       {label}
