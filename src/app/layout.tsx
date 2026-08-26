@@ -31,10 +31,31 @@ const onest = Onest({
   subsets: ["latin"],
 });
 
+// og:image/twitter:image vêm automaticamente dos arquivos opengraph-image.tsx/twitter-image.tsx
+// (convenção de metadata do Next.js) — só title/description/card precisam ser declarados aqui.
+const TITLE =
+  "Matheus Francisco — Senior Product Designer & Data Analyst Associate";
+const DESCRIPTION = "+5 anos no mercado B2B SaaS";
+
 export const metadata: Metadata = {
-  title: "Matheus Francisco — Senior Product Designer & Data Analyst Associate",
-  description:
-    "Portfólio de Matheus Francisco, Senior Product Designer e Data Analyst Associate.",
+  // Resolve as URLs absolutas de og:image/twitter:image contra o domínio próprio (CNAME) em
+  // vez de cair em localhost:3000 — necessário pro build estático, que não tem uma request
+  // real de onde inferir o host.
+  metadataBase: new URL("https://mtsilveirapf.com.br"),
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Matheus Francisco",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
