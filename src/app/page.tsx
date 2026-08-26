@@ -95,7 +95,11 @@ export default function Home() {
                 className="h-[64px] w-[146px] object-contain brightness-0 invert"
               />
             </div>
-            <div className="flex items-center justify-center bg-[rgb(10,10,10)] p-6">
+            {/* border-t: no grid-cols-2 do mobile, BETC Havas e Pecege formam a 2ª linha —
+                divide-x sozinho não separa linhas, só colunas. A partir do tablet o grid vira
+                4 colunas (1 linha só), então a borda soma nas laterais (border-l, já coberta
+                por divide-x) e precisa sumir. */}
+            <div className="flex items-center justify-center border-t border-border bg-[rgb(10,10,10)] p-6 tablet:border-t-0">
               <Image
                 src="/logos/betc-havas.png"
                 alt="BETC Havas"
@@ -105,7 +109,7 @@ export default function Home() {
                 className="h-[56px] w-[64px] object-contain"
               />
             </div>
-            <div className="flex items-center justify-center bg-[rgb(10,10,10)] p-6">
+            <div className="flex items-center justify-center border-t border-border bg-[rgb(10,10,10)] p-6 tablet:border-t-0">
               <Image
                 src="/logos/pecege.png"
                 alt="Pecege"
