@@ -110,7 +110,8 @@ export const homeContent: Record<Locale, HomeContent> = {
         "Product Designer com mais de 5 anos de experiência no mercado B2B SaaS. Executo o design de ponta a ponta com um processo integralmente assistido por IA.",
         "Tenho um perfil de forte autonomia, acostumado a trabalhar com ambiguidades, tomar decisões difíceis, construir fluxos de trabalho do zero e liderar projetos.",
         "Com pós-graduação em Data Analytics e conhecimento em Front-End, atuo lado a lado com times de engenharia, produto e negócio para alinhar a direção com rapidez.",
-        "Bom design, pra mim, é se o que foi construído realmente fez diferença. Atuando 100% de forma remota para empresas em todo o Brasil e exterior.",
+        "Bom design, pra mim, é se o que foi construído realmente fez diferença.",
+        "Atuando 100% de forma remota para empresas em todo o Brasil e exterior.",
       ],
       experiencesLabel: "Minhas experiências",
       workHistory: {
@@ -227,7 +228,8 @@ export const homeContent: Record<Locale, HomeContent> = {
         "Product Designer with over 5 years of experience in the B2B SaaS market. I execute design end-to-end with a process fully assisted by AI.",
         "I have a strongly autonomous profile, used to working with ambiguity, making tough decisions, building workflows from scratch, and leading projects.",
         "With a postgraduate degree in Data Analytics and Front-End knowledge, I work closely with engineering, product, and business teams to align direction quickly.",
-        "To me, good design means what gets built actually makes a difference. Working 100% remotely for companies across Brazil and abroad.",
+        "To me, good design means what gets built actually makes a difference.",
+        "Working 100% remotely for companies across Brazil and abroad.",
       ],
       experiencesLabel: "My experience",
       workHistory: {
