@@ -123,14 +123,11 @@ export function DataDrivenPage({ locale }: { locale: Locale }) {
               {/* grid-cols-5 a partir do tablet: com 5 ferramentas cabendo numa linha só (coluna
                   de leitura ~757px, 4 gaps de 24px, ~132px por item — coube confortavelmente), a
                   última linha incompleta deixa de existir por completo em vez de precisar
-                  centralizar uma sobra. No mobile, grid-cols-1 (empilhado, cada item ocupa a
-                  linha toda) pelo mesmo motivo: qualquer grade de 2+ colunas ali também deixaria
-                  1 item sobrando sozinho (2+2+1). Testado antes com flex-wrap + justify-center —
-                  centralizava a sobra corretamente, mas um único item centralizado abaixo de uma
-                  fileira de 4 ainda lia como desequilibrado; grid-cols-5 resolve na raiz, sem
-                  depender de recalcular o split toda vez que a lista de ferramentas mudar. Gap de
-                  24px (gap-6) a pedido explícito do usuário. */}
-              <div className="grid grid-cols-1 gap-6 tablet:grid-cols-5">
+                  centralizar uma sobra. No mobile, grid-cols-3 a pedido explícito do usuário —
+                  itens lado a lado, quebrando pelo limite da largura da tela (antes era
+                  grid-cols-1, empilhado verticalmente). Gap de 24px (gap-6) a pedido explícito
+                  do usuário. */}
+              <div className="grid grid-cols-3 gap-6 tablet:grid-cols-5">
                 {t.tools.items.map((tool) => (
                   <ToolCard key={tool.name} name={tool.name} logo={tool.logo} />
                 ))}
