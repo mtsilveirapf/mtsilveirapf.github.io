@@ -102,7 +102,12 @@ export default function Home() {
                 className="h-auto max-h-12 w-auto object-contain brightness-0 invert"
               />
             </div>
-            <div className="flex items-center justify-center bg-[rgb(10,10,10)] p-6">
+            {/* border-r-0: no grid-cols-2 do mobile, Thomson Reuters é a 2ª coluna (borda
+                direita da tela) — divide-x ainda aplica border-inline-end nela porque não é o
+                último filho do grid inteiro (Pecege é), sobrando um stroke indevido na borda
+                externa. tablet:border-r restaura o divisor real entre Thomson e BETC Havas no
+                grid-cols-4 de tablet/desktop, onde ele é a linha correta. */}
+            <div className="flex items-center justify-center border-r-0 bg-[rgb(10,10,10)] p-6 tablet:border-r tablet:border-border">
               <Image
                 src="/logos/thomson-reuters.png"
                 alt="Thomson Reuters"
