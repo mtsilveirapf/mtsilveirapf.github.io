@@ -259,6 +259,7 @@ export default function Home() {
               <Link
                 href={locale === "en-US" ? "/en/data-driven" : "/data-driven"}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex flex-col gap-4 rounded border border-border p-6 transition-colors hover:bg-[rgb(13,13,13)]"
               >
                 <h3 className="text-xl leading-[1.5] font-medium tracking-[-0.5px] text-white">
