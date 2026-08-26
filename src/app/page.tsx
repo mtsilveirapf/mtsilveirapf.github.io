@@ -73,11 +73,14 @@ export default function Home() {
           {/* 4 empresas confirmadas via screenshot de referência do Framer: Zenvia, Thomson
               Reuters, BETC Havas, Pecege. Assets originais fornecidos pelo usuário em
               empresas-logos/ e copiados para public/logos/. Nomes de empresas não traduzem. */}
-          {/* mx-6 tablet:mx-0: só no mobile (abaixo do tablet, 810px) o grid precisa do mesmo
-              respiro lateral do langTag/profile acima dele — a partir do tablet ele já fica
-              flush com a borda do container, como antes (confirmado visualmente). */}
+          {/* -mx-6 tablet:mx-0: full-bleed só no mobile, a pedido explícito do usuário — o
+              grid precisa ocupar 100% da viewport, ignorando o px-6 herdado da section (única
+              largura que cria o inset aqui, já que o container mx-auto max-w-[1269px] não
+              restringe nada nessa faixa). Margem negativa igual ao padding cancela esse inset.
+              A partir do tablet volta a ficar flush com o container (tablet:mx-0), como
+              sempre esteve nesse breakpoint. */}
           <div
-            className="mx-6 grid grid-cols-2 divide-x divide-border rounded-none border-t border-b border-border tablet:mx-0 tablet:grid-cols-4"
+            className="-mx-6 grid grid-cols-2 divide-x divide-border rounded-none border-t border-b border-border tablet:mx-0 tablet:grid-cols-4"
             style={companiesStyle}
           >
             <div className="flex items-center justify-center bg-[rgb(10,10,10)] p-6">
