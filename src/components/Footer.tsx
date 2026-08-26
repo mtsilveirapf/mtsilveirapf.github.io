@@ -30,13 +30,15 @@ export function Footer() {
   return (
     <footer className={`w-full border-t border-border bg-black ${PAGE_PADDING_X}`}>
       <div className={containerClassName}>
-        <LogoMark className="h-6 w-6 text-accent" />
+        <LogoMark className="h-5 w-5 text-accent tablet:h-6 tablet:w-6" />
 
-        <h2 className="text-[32px] leading-[1.05] tracking-[-0.05em] font-medium text-white">
+        {/* text-2xl/text-lg: só no mobile, mesmo pedido de redução de fonte do header/ContactNav
+            aplicado aqui — tablet/desktop mantêm os tamanhos originais (text-[32px]/text-2xl). */}
+        <h2 className="text-2xl leading-[1.05] tracking-[-0.05em] font-medium text-white tablet:text-[32px]">
           {thanks}
         </h2>
 
-        <p className="text-2xl leading-[1.05] tracking-[-0.05em] font-medium">
+        <p className="text-lg leading-[1.05] tracking-[-0.05em] font-medium tablet:text-2xl">
           {message[0]}
           <br />
           {message[1]}
