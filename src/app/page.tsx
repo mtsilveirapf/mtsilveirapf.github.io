@@ -39,8 +39,12 @@ export default function Home() {
             <LanguageTab className="border-x-0" />
           </div>
 
+          {/* px-0 tablet:px-6: só no mobile o próprio padding do bloco de perfil some — ele já
+              herda o px-6 da section por fora, então ficava com inset dobrado (24+24=48px). A
+              partir do tablet volta ao px-6 de sempre (inalterado), a pedido explícito do
+              usuário só pro mobile. */}
           <div
-            className="flex flex-col items-start gap-4 px-6 pb-10 tablet:flex-row tablet:items-center desktop:px-10"
+            className="flex flex-col items-start gap-4 px-0 pb-10 tablet:flex-row tablet:items-center tablet:px-6 desktop:px-10"
             style={profileStyle}
           >
             <div className="h-[119px] w-[119px] shrink-0 overflow-hidden rounded">
@@ -60,8 +64,10 @@ export default function Home() {
             </div>
           </div>
 
+          {/* pl-0 tablet:pl-6: mesmo motivo do bloco de perfil acima — só o mobile perde o
+              próprio padding (já tem o px-6 da section por fora); tablet/desktop inalterados. */}
           <h1
-            className="w-full pl-6 text-[40px] leading-[1.05] font-semibold tracking-[-0.05em] text-white tablet:text-[64px] desktop:pl-10 desktop:text-[80px]"
+            className="w-full pl-0 text-[40px] leading-[1.05] font-semibold tracking-[-0.05em] text-white tablet:pl-6 tablet:text-[64px] desktop:pl-10 desktop:text-[80px]"
             style={titleStyle}
           >
             {t.hero.titleLine1}
