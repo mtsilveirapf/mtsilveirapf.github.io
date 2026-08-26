@@ -158,15 +158,16 @@ export const homeContent: Record<Locale, HomeContent> = {
     },
     leitura: {
       eyebrow: "LEITURA",
-      title: "Data-Driven Design",
+      title: "Visão e Processos",
       card1: {
-        title: "Estratégia e pensamento de produto",
-        description: "Guiando decisões de design com métricas de UX e Produto",
+        title: "Product Analytics",
+        description:
+          "Decisões de design embasadas por métricas de produto e comportamento de usuário",
       },
       card2: {
-        title: "AI + Figma",
+        title: "IA Aplicada ao Design",
         description:
-          "Redesign completo de produto conduzido com apoio de inteligência artificial, com ganhos mensuráveis de produtividade.",
+          "Como integro inteligência artificial em todas as etapas do fluxo de trabalho para acelerar entregas e otimizar o processo de design.",
         codeBadge: "Código",
         designSystemBadge: "Design System",
       },
