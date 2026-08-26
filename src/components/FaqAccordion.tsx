@@ -79,8 +79,6 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
                       {" "}
                       <Link
                         href={item.linkHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="text-accent hover:underline"
                       >
                         {item.linkLabel}

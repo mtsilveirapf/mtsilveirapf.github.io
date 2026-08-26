@@ -120,8 +120,6 @@ export function CaseStudyPage({ locale }: { locale: Locale }) {
                 <div className="flex flex-col gap-10">
                   <Link
                     href="/"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="flex w-fit items-center gap-2 text-base text-text-50 transition-colors hover:text-white"
                   >
                     <ArrowLeft className="h-4 w-4" strokeWidth={1.5} />

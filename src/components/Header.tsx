@@ -25,12 +25,7 @@ export function Header() {
       className={`sticky top-0 z-50 w-full border-b border-border bg-black ${PAGE_PADDING_X}`}
     >
       <div className={containerClassName}>
-        <Link
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2"
-        >
+        <Link href="/" className="flex items-center gap-2">
           <LogoMark className="h-6 w-6 text-accent" />
           <span className="text-base leading-[1.2] text-white">
             MATHEUS FRANCISCO

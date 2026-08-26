@@ -14,10 +14,11 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 // Idioma persiste em localStorage (chave "locale") pra sobreviver a navegações de página
-// inteira — necessário porque o case study em inglês vive numa rota separada (/en/...), e o
-// ProjectCard da home abre essa rota em nova aba (target="_blank"), então não há como carregar
-// o Context em memória de uma aba pra outra. Sem persistência, "Voltar ao portfólio" a partir
-// da versão em inglês do case sempre cairia de volta no português.
+// inteira — necessário porque o case study em inglês vive numa rota separada (/en/...), um
+// export estático do Next (cada rota é um HTML próprio), então o Context em memória sempre
+// reseta numa navegação full-page entre elas, mesmo dentro da mesma aba. Sem persistência,
+// "Voltar ao portfólio" a partir da versão em inglês do case sempre cairia de volta no
+// português.
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("pt-BR");
 

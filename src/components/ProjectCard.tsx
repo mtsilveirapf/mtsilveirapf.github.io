@@ -77,8 +77,6 @@ export function ProjectCard({
     return (
       <Link
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
         className={`${sharedClassName} transition-colors hover:bg-[rgb(13,13,13)]`}
       >
         {body}
