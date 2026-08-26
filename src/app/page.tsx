@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Code2, LayoutGrid, Plus, Mic } from "lucide-react";
 import { LanguageTab } from "@/components/LanguageTab";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Badge } from "@/components/Badge";
 import { StatusBadge } from "@/components/StatusBadge";
+import { LeituraCard } from "@/components/LeituraCard";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ProjectCard } from "@/components/ProjectCard";
 import { GhostProjectCard } from "@/components/GhostProjectCard";
@@ -256,9 +256,8 @@ export default function Home() {
               title={t.leitura.title}
             />
             <div className="grid grid-cols-1 gap-6 tablet:grid-cols-2">
-              <Link
+              <LeituraCard
                 href={locale === "en-US" ? "/en/data-driven" : "/data-driven"}
-                className="flex flex-col gap-4 rounded border border-border p-6 transition-colors hover:bg-[rgb(13,13,13)]"
               >
                 <h3 className="text-xl leading-[1.5] font-medium tracking-[-0.5px] text-white">
                   {t.leitura.card1.title}
@@ -269,9 +268,13 @@ export default function Home() {
                 <div className="flex flex-1 items-center justify-center">
                   <UsersLineChart />
                 </div>
-              </Link>
-              <div className="relative flex flex-col gap-4 rounded border border-border p-6">
-                <StatusBadge status="in-progress" />
+              </LeituraCard>
+              {/* disabled: "IA Aplicada ao Design" ainda não foi publicado — card sem link, sem
+                  hover, aria-disabled (ver LeituraCard.tsx). Remover a prop quando publicar. */}
+              <LeituraCard
+                disabled
+                badge={<StatusBadge status="unavailable" />}
+              >
                 <h3 className="text-xl leading-[1.5] font-medium tracking-[-0.5px] text-white">
                   {t.leitura.card2.title}
                 </h3>
@@ -297,7 +300,7 @@ export default function Home() {
                     }
                   />
                 </div>
-              </div>
+              </LeituraCard>
             </div>
           </Reveal>
         </div>

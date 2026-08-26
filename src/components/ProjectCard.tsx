@@ -50,7 +50,7 @@ export function ProjectCard({
           <div className="relative h-[220px] w-full shrink-0 overflow-hidden rounded">
             {imageSlot}
           </div>
-          <h3 className="text-[20px] leading-[1.2] font-medium tracking-[-0.02em] text-white">
+          <h3 className="text-[20px] leading-[1.4] font-medium tracking-[-0.02em] text-white">
             {title}
           </h3>
           {description && (

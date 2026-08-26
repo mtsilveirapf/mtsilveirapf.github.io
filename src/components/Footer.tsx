@@ -42,7 +42,7 @@ export function Footer() {
             quebrando naturalmente pela largura da tela — o espaço antes do br garante que
             "mensagem." e "Vamos" não colem quando a quebra some. tablet/desktop mantêm a
             quebra fixa original entre as duas frases. */}
-        <p className="text-lg leading-[1.05] tracking-[-0.05em] font-medium tablet:text-2xl">
+        <p className="text-lg leading-[1.4] tracking-[-0.05em] font-medium tablet:text-2xl">
           {message[0]}{" "}
           <br className="hidden tablet:block" />
           {message[1]}
