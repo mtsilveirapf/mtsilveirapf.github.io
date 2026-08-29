@@ -13,7 +13,17 @@ export const PROSE_WIDTH = "max-w-[75ch]";
 // (.case-study-container em globals.css, faixa 1366–1919.98px). Usado por Header/Footer para
 // aplicar a mesma classe e manter os strokes verticais alinhados com o conteúdo nessas rotas
 // específicas — nas demais (Home, data-driven), o container permanece com max-w-[1269px] puro.
+// Precisa cobrir as 2 versões de cada case study (pt-BR e a rota /en/ correspondente) — faltar
+// uma delas aqui é exatamente o que causava o desalinho relatado pelo usuário: CaseStudyPage/
+// MobileAppPage aplicam case-study-sidebar/case-study-container sempre, independente de idioma,
+// mas Header/Footer só respondiam a /gestao-prazos e /app-mobile, deixando as rotas em inglês
+// com a largura de container "pura" (sem a correção) enquanto o conteúdo já estava corrigido.
 export function isCaseStudyRoute(pathname: string | null): boolean {
   if (!pathname) return false;
-  return pathname.startsWith("/gestao-prazos") || pathname.startsWith("/app-mobile");
+  return (
+    pathname.startsWith("/gestao-prazos") ||
+    pathname.startsWith("/app-mobile") ||
+    pathname.startsWith("/en/deadline-control") ||
+    pathname.startsWith("/en/mobile-app")
+  );
 }
