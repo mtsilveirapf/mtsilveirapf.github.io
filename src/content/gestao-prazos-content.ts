@@ -101,7 +101,7 @@ export const gestaoPrazosContent: Record<Locale, CaseStudyContent> = {
     backLink: "Voltar ao portfólio",
     hero: {
       navLabel: "Visão geral",
-      title: "Liderando o redesign da jornada de maior impacto na retenção.",
+      title: "Liderando o redesign da jornada de maior impacto na retenção",
       intro:
         "O produto enfrenta crescimento de churn por migração para concorrentes com menor curva de aprendizado. Mapeei as jornadas críticas e priorizei \"Controle de Prazos\" como a de maior potencial de impacto na retenção. Critério de priorização meu, baseado em dados de UX e cancelamento. Em testes fechados com clientes, a nova jornada alcançou 73% de retenção, eliminou 4 etapas e teve aprovação de 4,6 de 5.",
       metrics: [
@@ -354,7 +354,7 @@ export const gestaoPrazosContent: Record<Locale, CaseStudyContent> = {
     backLink: "Back to portfolio",
     hero: {
       navLabel: "Overview",
-      title: "Leading the redesign of the journey with the highest impact on retention.",
+      title: "Leading the redesign of the journey with the highest impact on retention",
       intro:
         "The product faces growing churn from migration to competitors with a shorter learning curve. I mapped the critical journeys and prioritized \"Deadline Control\" as the one with the greatest potential impact on retention. Prioritization criteria were mine, based on UX and cancellation data. In closed tests with clients, the new journey reached 73% retention, cut 4 steps and scored 4.6 out of 5.",
       metrics: [

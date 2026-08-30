@@ -83,7 +83,11 @@ export function DataDrivenPage({ locale }: { locale: Locale }) {
           <div className="flex w-full max-w-[75ch] flex-col">
             {/* Hero */}
             <section className="flex flex-col gap-6 pt-12 pb-10 tablet:pt-16">
-              <Reveal>
+              {/* gap-4 no Reveal + gap-10 só entre backLink/h1: mesmo padrão de
+                  CaseStudyPage.tsx (gestao-prazos) — título e descrição ficam
+                  próximos (gap-4), sem herdar o respiro maior que separa o link
+                  de volta do título. */}
+              <Reveal className="flex flex-col gap-4">
                 <div className="flex flex-col gap-10">
                   <Link
                     href="/"
@@ -96,14 +100,14 @@ export function DataDrivenPage({ locale }: { locale: Locale }) {
                   <h1 className="max-w-[20ch] text-[32px] leading-[1.1] font-medium tracking-[-0.02em] text-white tablet:text-[48px]">
                     {t.hero.title}
                   </h1>
-
-                  {/* Mesma descrição do card "Product Analytics" na Home (Leitura), a pedido
-                      explícito do usuário — corrige a inconsistência entre o título do card e
-                      o título real desta página. */}
-                  <p className={`${PROSE_WIDTH} text-base leading-[1.6]`}>
-                    {t.hero.intro}
-                  </p>
                 </div>
+
+                {/* Mesma descrição do card "Product Analytics" na Home (Leitura), a pedido
+                    explícito do usuário — corrige a inconsistência entre o título do card e
+                    o título real desta página. */}
+                <p className={`${PROSE_WIDTH} text-base leading-[1.6]`}>
+                  {t.hero.intro}
+                </p>
               </Reveal>
             </section>
           </div>
