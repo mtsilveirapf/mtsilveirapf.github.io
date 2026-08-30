@@ -21,6 +21,7 @@ export type DataDrivenContent = {
   backLink: string;
   hero: {
     title: string;
+    intro: string;
   };
   approach: {
     number: string;
@@ -52,7 +53,9 @@ export const dataDrivenContent: Record<Locale, DataDrivenContent> = {
   "pt-BR": {
     backLink: "Voltar ao portfólio",
     hero: {
-      title: "Estratégia e Pensamento de Produto",
+      title: "Data-Driven Design",
+      intro:
+        "Decisões de design embasadas por métricas de produto e comportamento de usuário",
     },
     approach: {
       number: "01",
@@ -137,7 +140,8 @@ export const dataDrivenContent: Record<Locale, DataDrivenContent> = {
   "en-US": {
     backLink: "Back to portfolio",
     hero: {
-      title: "Product Strategy & Thinking",
+      title: "Data-Driven Design",
+      intro: "Design decisions grounded in product and user-behavior metrics",
     },
     approach: {
       number: "01",

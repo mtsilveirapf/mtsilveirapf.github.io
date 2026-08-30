@@ -96,6 +96,13 @@ export function DataDrivenPage({ locale }: { locale: Locale }) {
                   <h1 className="max-w-[20ch] text-[32px] leading-[1.1] font-medium tracking-[-0.02em] text-white tablet:text-[48px]">
                     {t.hero.title}
                   </h1>
+
+                  {/* Mesma descrição do card "Product Analytics" na Home (Leitura), a pedido
+                      explícito do usuário — corrige a inconsistência entre o título do card e
+                      o título real desta página. */}
+                  <p className={`${PROSE_WIDTH} text-base leading-[1.6]`}>
+                    {t.hero.intro}
+                  </p>
                 </div>
               </Reveal>
             </section>
