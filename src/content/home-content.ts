@@ -162,7 +162,7 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "LEITURA",
       title: "Visão e Processos",
       card1: {
-        title: "Product Analytics",
+        title: "Data-Driven Design",
         description:
           "Decisões de design embasadas por métricas de produto e comportamento de usuário",
       },
@@ -280,7 +280,7 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "READING",
       title: "Data-Driven Design",
       card1: {
-        title: "Product strategy & thinking",
+        title: "Data-Driven Design",
         description: "Guiding design decisions with UX and Product metrics",
       },
       card2: {
