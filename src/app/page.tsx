@@ -161,7 +161,7 @@ export default function Home() {
               <ProjectCard
                 href={locale === "en-US" ? "/en/deadline-control" : "/gestao-prazos"}
                 image={{
-                  src: "https://framerusercontent.com/images/YCLwbdBsZEPpVLhgwjZO1PfUQ0.png",
+                  src: "/case-studies/gestao-prazos/thumb.png",
                   alt: t.destaques.main.title,
                 }}
                 title={t.destaques.main.title}

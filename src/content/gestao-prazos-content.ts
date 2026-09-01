@@ -275,23 +275,23 @@ export const gestaoPrazosContent: Record<Locale, CaseStudyContent> = {
       carouselPrevLabel: "Item anterior",
       carouselNextLabel: "Próximo item",
       privacyNotice:
-        "Por questões de privacidade, o Design System e as interfaces originais foram omitidas. As telas exibidas representam o protótipo funcional usado nos testes com usuários reais.",
+        "Por motivos de NDA, o Design System e as interfaces originais foram alterados para fins de portfólio. As telas exibidas representam o esquema da solução final.",
       items: [
         {
           title: "Entidade \"Prazo\"",
           description:
             "Agrupador que reúne tarefas de um mesmo contexto. Elimina a fragmentação da jornada. Ao criar um prazo, a automação gera as sequências definidas pelo usuário.",
           ndaNote:
-            "Nota: interface criada com auxílio de IA para os testes. A versão original está protegida por NDA.",
+            "Nota: telas modificadas a partir do Design System original, alteradas por mim por questões de NDA.",
           alt: "Captura de tela — Entidade \"Prazo\"",
-          image: "/case-studies/gestao-prazos/novo-prazo.png",
+          image: "/case-studies/gestao-prazos/publications.png",
         },
         {
           title: "Lista, Priorização & Sinalização Visual",
           description:
             "Visão macro dos prazos ativos. Ordenada por proximidade de vencimento, com sinalização visual de urgência.",
           ndaNote:
-            "Nota: interface criada com auxílio de IA para os testes. A versão original está protegida por NDA.",
+            "Nota: telas modificadas a partir do Design System original, alteradas por mim por questões de NDA.",
           alt: "Captura de tela — Lista, Priorização & Sinalização Visual",
           image: "/case-studies/gestao-prazos/lista-prazos.png",
         },
@@ -300,7 +300,7 @@ export const gestaoPrazosContent: Record<Locale, CaseStudyContent> = {
           description:
             "Visão granular dentro de cada prazo. Acompanha as tarefas relacionadas, como um Trello.",
           ndaNote:
-            "Nota: interface criada com auxílio de IA para os testes. A versão original está protegida por NDA.",
+            "Nota: telas modificadas a partir do Design System original, alteradas por mim por questões de NDA.",
           alt: "Captura de tela — Kanban individual por prazo",
           image: "/case-studies/gestao-prazos/kanban-prazo.png",
         },
@@ -528,23 +528,23 @@ export const gestaoPrazosContent: Record<Locale, CaseStudyContent> = {
       carouselPrevLabel: "Previous item",
       carouselNextLabel: "Next item",
       privacyNotice:
-        "For privacy reasons, the original Design System and interfaces were omitted. The screens shown represent the functional prototype used in testing with real users.",
+        "For NDA reasons, the Design System and original interfaces were altered for portfolio purposes. The screens shown represent the final solution's structure.",
       items: [
         {
           title: "\"Deadline\" entity",
           description:
             "A grouper that brings together tasks from the same context. It eliminates fragmentation in the journey. When a deadline is created, automation generates the sequences the user defined.",
           ndaNote:
-            "Note: interface built with AI assistance for testing. The original version is protected by an NDA.",
+            "Note: screens modified from the original Design System, altered by me due to NDA reasons.",
           alt: "Screenshot — \"Deadline\" entity",
-          image: "/case-studies/gestao-prazos/novo-prazo.png",
+          image: "/case-studies/gestao-prazos/publications.png",
         },
         {
           title: "List, Prioritization & Visual Signaling",
           description:
             "A macro view of active deadlines. Ordered by proximity to due date, with visual urgency signaling.",
           ndaNote:
-            "Note: interface built with AI assistance for testing. The original version is protected by an NDA.",
+            "Note: screens modified from the original Design System, altered by me due to NDA reasons.",
           alt: "Screenshot — List, Prioritization & Visual Signaling",
           image: "/case-studies/gestao-prazos/lista-prazos.png",
         },
@@ -553,7 +553,7 @@ export const gestaoPrazosContent: Record<Locale, CaseStudyContent> = {
           description:
             "A granular view inside each deadline. Tracks the related tasks, like a Trello board.",
           ndaNote:
-            "Note: interface built with AI assistance for testing. The original version is protected by an NDA.",
+            "Note: screens modified from the original Design System, altered by me due to NDA reasons.",
           alt: "Screenshot — Individual kanban per deadline",
           image: "/case-studies/gestao-prazos/kanban-prazo.png",
         },
