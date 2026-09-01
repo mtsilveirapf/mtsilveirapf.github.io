@@ -121,7 +121,6 @@ export const gestaoPrazosContent: Record<Locale, CaseStudyContent> = {
         { value: "37%", label: "dos registros de UX citavam dificuldades com o módulo de tarefas" },
         { value: "3,9/5", label: "nota de serviço" },
         { value: "16%", label: "dos cancelamentos apontavam a gestão de atividades como causa" },
-        { value: "Múltiplas etapas", label: "no funil comportamental" },
       ],
       interviewsNote:
         "Conduzi entrevistas em profundidade para entender a causa por trás dos números. Construí skills no Claude para estruturar persona, mapa de empatia e trabalho a ser feito. As skills organizaram a pesquisa e sugeriram os pontos de dor, que revisei e confirmei contra o que observei nas entrevistas.",
@@ -374,7 +373,6 @@ export const gestaoPrazosContent: Record<Locale, CaseStudyContent> = {
         { value: "37%", label: "of UX records cited difficulties with the task module" },
         { value: "3.9/5", label: "service rating" },
         { value: "16%", label: "of cancellations pointed to task management as the cause" },
-        { value: "Multiple steps", label: "in the behavioral funnel" },
       ],
       interviewsNote:
         "I ran in-depth interviews to understand the cause behind the numbers. I built Claude skills to structure user persona, empathy map and job to be done. The skills organized the research and suggested the pain points, which I reviewed and confirmed against what I observed in the interviews.",
